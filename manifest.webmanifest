@@ -1,0 +1,9 @@
+{
+  "name": "TEONAS HERZ",
+  "short_name": "TEONAS HERZ",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fffaf5",
+  "theme_color": "#fff5eb",
+  "lang": "de"
+}

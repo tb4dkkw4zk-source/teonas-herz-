@@ -1,0 +1,18 @@
+TEONAS HERZ – erster Web-App-Prototyp
+
+Enthalten:
+- index.html: klickbarer Prototyp
+- manifest.webmanifest und service-worker.js: Grundlage für eine installierbare PWA
+
+Test:
+1. index.html in einem modernen Browser öffnen.
+2. Sprache auswählen.
+3. Kommunikation > Trinken/Essen öffnen und eine Karte antippen.
+4. Die Sprachausgabe verwendet die im Browser/Betriebssystem verfügbaren Stimmen.
+
+Wichtig:
+- Dies ist ein früher Funktionsprototyp, keine veröffentlichte oder vollständig barrierefreie App.
+- Sprachausgabe hängt von den verfügbaren Stimmen des Geräts ab; Armenisch wird möglicherweise nicht auf jedem iPhone unterstützt.
+- Für „Zum Home-Bildschirm“ und Offline-Funktion muss die App später über eine HTTPS-Webadresse bereitgestellt werden.
+- Emojis sind vorläufige Platzhalter. Sie werden später durch eigens gestaltete Fuchs-/Hase-Bildkarten ersetzt.
+- Vor einem Einsatz mit Kindern müssen Bedienbarkeit, Übersetzungen, Datenschutz und AAC-Fachlichkeit geprüft werden.
