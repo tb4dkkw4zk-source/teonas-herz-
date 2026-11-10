@@ -1,11 +1,12 @@
-TEONAS HERZ – Aktualisierung mit eigenem Fuchs-und-Hase-Appsymbol
+TEONAS HERZ – Kommunikationsbereich, erste Ausbaustufe
 
-Diese Version ergänzt:
-- eigenes illustriertes App-Symbol
-- iPhone-Startbildschirm-Symbol (apple-touch-icon.png)
-- PWA-Symbole (192x192 und 512x512)
-- aktualisiertes Manifest und Cache
+Enthalten:
+- index.html: Startseite und Kommunikationskarten
+- logo.png: das Fuchs-und-Hase-Herz-Logo
+- manifest.webmanifest und service-worker.js: Grundlage für die installierbare Web-App
 
-Zum Aktualisieren: Alle Dateien aus diesem Ordner in das GitHub-Repository hochladen und vorhandene Dateien ersetzen. Danach GitHub Pages neu bereitstellen lassen. Auf dem iPhone kann es nötig sein, die alte Startbildschirm-Verknüpfung zu entfernen und die Website erneut über Safari > Teilen > Zum Home-Bildschirm hinzuzufügen.
+Wichtig:
+Bitte die vier Dateien im GitHub-Repository im Hauptverzeichnis (main / root) hochladen und vorhandene Dateien gleichen Namens ersetzen.
+Danach die GitHub-Pages-Seite in Safari neu laden. Falls die alte Version angezeigt wird, Safari-Seite aktualisieren oder den Browser-Tab schließen und erneut öffnen.
 
-Hinweis: Dies ist weiterhin ein früher Prototyp. Die Inhalte und Übersetzungen müssen vor einem echten Einsatz mit Kindern fachlich geprüft werden.
+Die Sprachausgabe hängt von den auf dem iPhone verfügbaren Stimmen ab. Die vier Sprachen sind vorbereitet; die armenische Stimme kann je nach iOS-Version fehlen.
