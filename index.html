@@ -1,100 +1,348 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#fff8f1">
 <title>TEONAS HERZ</title>
 <link rel="manifest" href="manifest.webmanifest">
 <style>
-:root{--ink:#4b3932;--muted:#806d63;--paper:#fffaf5;--line:#eadbd1}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-header{text-align:center;padding:22px 18px 12px;background:linear-gradient(#fff0e4,#fffaf5)}
-.logo{display:block;width:min(68vw,250px);height:auto;margin:0 auto 12px;border-radius:28px}
-h1{font-size:30px;margin:8px 0 4px;letter-spacing:.3px}
-.tagline{margin:0;color:var(--muted);font-size:17px}
-main{max-width:760px;margin:auto;padding:18px}
-.language{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 24px;font-weight:700}
-select{font:inherit;color:var(--ink);background:white;border:1px solid var(--line);border-radius:15px;padding:12px 14px;max-width:58%}
-h2{font-size:25px;margin:10px 0 8px}
-.hint{color:var(--muted);line-height:1.5;margin:0 0 20px}
-.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.tile{border:0;border-radius:24px;min-height:150px;padding:18px 10px;color:var(--ink);font-size:19px;font-weight:700;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;box-shadow:0 5px 18px #6c45300c}
-.tile .emoji{font-size:48px;line-height:1.2}
-.communication{background:#ffe8d9}.games{background:#e6f2ff}.art{background:#f0eaff}.daily{background:#e8f5e9}.feelings{background:#ffe8ef}.videos{background:#fff2cc}
-.panel{margin-top:18px}
-.back{border:0;background:#f3e7df;color:var(--ink);border-radius:14px;padding:12px 17px;font-size:16px;font-weight:700;margin-bottom:16px}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.card{border:2px solid #f1dfd3;background:white;border-radius:22px;min-height:132px;padding:14px 8px;color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;font:700 18px inherit}
-.card .emoji{font-size:42px}
-.card:active,.tile:active{transform:scale(.98)}
-.sentence{margin-top:18px;padding:16px;background:#fff0e7;border-radius:18px;line-height:1.5}
-.sentence button{margin-top:10px;border:0;background:#8b5e4c;color:white;border-radius:14px;padding:12px 16px;font-size:16px}
-footer{text-align:center;color:#a18e84;font-size:13px;padding:24px 10px}
-@media(min-width:600px){.tile{min-height:180px;font-size:22px}.card{min-height:160px}.card .emoji{font-size:52px}}
+:root {
+  --ink:#4b3932;
+  --muted:#806d63;
+  --paper:#fff8f1;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Arial,sans-serif;
+}
+header {
+  text-align:center;
+  padding:22px 18px 12px;
+}
+.logo {
+  display:block;
+  width:min(68vw,250px);
+  height:auto;
+  margin:0 auto 12px;
+  border-radius:24px;
+}
+h1 { font-size:30px; margin:8px 0 4px; }
+.tagline { margin:0; color:var(--muted); font-size:17px; }
+main { max-width:760px; margin:auto; padding:18px; }
+.language {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:20px 0;
+  font-weight:bold;
+}
+select {
+  font:inherit;
+  color:var(--ink);
+  background:white;
+  border:1px solid #e4d7ce;
+  border-radius:14px;
+  padding:12px;
+}
+h2 { font-size:25px; margin:10px 0 8px; }
+.hint { color:var(--muted); line-height:1.5; margin-bottom:20px; }
+.tiles {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.tile {
+  border:0;
+  border-radius:24px;
+  min-height:150px;
+  padding:18px 10px;
+  color:var(--ink);
+  font-size:19px;
+  font-weight:bold;
+  box-shadow:0 4px 12px #6d49300d;
+}
+.tile .emoji { display:block; font-size:48px; margin-bottom:12px; }
+.communication { background:#ffe8d9; }
+.games { background:#e5f2ff; }
+.paint { background:#eee8ff; }
+.everyday { background:#e7f4e8; }
+.feelings { background:#ffe8f0; }
+.videos { background:#fff0cf; }
+.panel { margin-top:18px; }
+.back {
+  border:0;
+  background:#f3e7df;
+  color:var(--ink);
+  border-radius:14px;
+  padding:13px 18px;
+  font-size:17px;
+  margin-bottom:16px;
+}
+.cards {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+.card {
+  border:2px solid #f0e3da;
+  background:white;
+  border-radius:20px;
+  min-height:125px;
+  padding:16px 8px;
+  color:var(--ink);
+  font-size:18px;
+  font-weight:bold;
+}
+.card .emoji { display:block; font-size:42px; margin-bottom:8px; }
+button { cursor:pointer; }
+button:active { transform:scale(.98); }
+footer {
+  text-align:center;
+  color:var(--muted);
+  padding:28px 12px;
+  font-size:14px;
+}
+@media(max-width:360px) {
+  .tile { min-height:125px; font-size:17px; }
+}
 </style>
 </head>
 <body>
 <header>
-<img class="logo" src="logo.png" alt="Fuchs und Hase halten ein Herz">
-<h1>TEONAS HERZ</h1><p class="tagline" id="tagline">Eine Herzenshilfe für jedes Kind.</p>
+  <img class="logo" src="logo.PNG" alt="Fuchs und Hase mit einem Herz">
+  <h1>TEONAS HERZ</h1>
+  <p class="tagline">Eine Herzenshilfe für jedes Kind.</p>
 </header>
+
 <main>
-<div class="language"><span id="languageLabel">Wähle deine Sprache</span>
-<select id="language" aria-label="Sprache">
-<option value="de">Deutsch</option><option value="hy">Հայերեն</option><option value="ru">Русский</option><option value="en">English</option>
-</select></div>
-<section id="home">
-<h2 id="welcome">Hallo! Was möchtest du machen?</h2>
-<p class="hint" id="homeHint">Tippe auf ein Bild – das Wort wird automatisch gesprochen.</p>
-<div class="tiles">
-<button class="tile communication" data-section="communication"><span class="emoji">💬</span><span data-t="communication">Kommunikation</span></button>
-<button class="tile games" data-section="games"><span class="emoji">🧩</span><span data-t="games">Lernspiele</span></button>
-<button class="tile art" data-section="art"><span class="emoji">🎨</span><span data-t="art">Malen &amp; Kreativität</span></button>
-<button class="tile daily" data-section="daily"><span class="emoji">🪥</span><span data-t="daily">Alltag lernen</span></button>
-<button class="tile feelings" data-section="feelings"><span class="emoji">💗</span><span data-t="feelings">Gefühle</span></button>
-<button class="tile videos" data-section="videos"><span class="emoji">🎬</span><span data-t="videos">Lernvideos</span></button>
-</div>
-</section>
-<section id="detail" hidden class="panel">
-<button class="back" id="back">← <span id="backText">Zurück</span></button>
-<h2 id="detailTitle"></h2><p class="hint" id="detailHint"></p>
-<div class="cards" id="cards"></div>
-<div class="sentence" id="sentence" hidden><div id="sentenceText"></div><button id="speakSentence">▶ <span id="speakLabel">Satz sprechen</span></button></div>
-</section>
+  <div class="language">
+    <span id="languageLabel">Wähle deine Sprache</span>
+    <select id="language" onchange="changeLanguage()">
+      <option value="de">Deutsch</option>
+      <option value="hy">Հայերեն</option>
+      <option value="ru">Русский</option>
+      <option value="en">English</option>
+    </select>
+  </div>
+
+  <section id="home">
+    <h2 id="welcome">Hallo! Was möchtest du machen?</h2>
+    <p class="hint" id="hint">Tippe auf ein Bild – das Wort wird automatisch gesprochen.</p>
+    <div class="tiles">
+      <button class="tile communication" onclick="openSection('communication')">
+        <span class="emoji">💬</span><span data-key="communication">Kommunikation</span>
+      </button>
+      <button class="tile games" onclick="openSection('games')">
+        <span class="emoji">🧩</span><span data-key="games">Lernspiele</span>
+      </button>
+      <button class="tile paint" onclick="openSection('paint')">
+        <span class="emoji">🎨</span><span data-key="paint">Malen & Kreativität</span>
+      </button>
+      <button class="tile everyday" onclick="openSection('everyday')">
+        <span class="emoji">🪥</span><span data-key="everyday">Alltag lernen</span>
+      </button>
+      <button class="tile feelings" onclick="openSection('feelings')">
+        <span class="emoji">❤️</span><span data-key="feelings">Gefühle</span>
+      </button>
+      <button class="tile videos" onclick="openSection('videos')">
+        <span class="emoji">🎬</span><span data-key="videos">Lernen mit Videos</span>
+      </button>
+    </div>
+  </section>
+
+  <section id="detail" class="panel" hidden>
+    <button class="back" onclick="goHome()" id="backButton">← Zurück</button>
+    <h2 id="sectionTitle"></h2>
+    <p class="hint" id="sectionHint"></p>
+    <div class="cards" id="cards"></div>
+  </section>
 </main>
-<footer>Mit Liebe gemacht · Kostenlos und werbefrei</footer>
+
+<footer>Mit Liebe für jedes Kind. ❤️</footer>
+
 <script>
-const translations={
-de:{language:"Wähle deine Sprache",welcome:"Hallo! Was möchtest du machen?",hint:"Tippe auf ein Bild – das Wort wird automatisch gesprochen.",back:"Zurück",sections:{communication:"Kommunikation",games:"Lernspiele",art:"Malen & Kreativität",daily:"Alltag lernen",feelings:"Gefühle",videos:"Lernvideos"},tap:"Tippe auf ein Bild. Das Wort wird gesprochen.",sentence:"Ich möchte",speak:"Satz sprechen",other:"Etwas anderes",items:{drink:"Trinken",eat:"Essen",play:"Spielen",toilet:"Toilette",mom:"Mama",dad:"Papa",help:"Hilfe",other:"Etwas anderes",water:"Wasser",juice:"Saft",milk:"Milch",strawberry:"Erdbeere",happy:"Fröhlich",sad:"Traurig",afraid:"Ängstlich",angry:"Wütend",calm:"Ruhig",tired:"Müde",hands:"Hände waschen",teeth:"Zähne putzen",dress:"Anziehen",sleep:"Schlafen"}},
-en:{language:"Choose your language",welcome:"Hello! What would you like to do?",hint:"Tap a picture – the word will be spoken.",back:"Back",sections:{communication:"Communication",games:"Learning games",art:"Art & creativity",daily:"Everyday learning",feelings:"Feelings",videos:"Learning videos"},tap:"Tap a picture. The word will be spoken.",sentence:"I want",speak:"Speak sentence",other:"Something else",items:{drink:"Drinking",eat:"Eating",play:"Play",toilet:"Toilet",mom:"Mum",dad:"Dad",help:"Help",other:"Something else",water:"Water",juice:"Juice",milk:"Milk",strawberry:"Strawberry",happy:"Happy",sad:"Sad",afraid:"Afraid",angry:"Angry",calm:"Calm",tired:"Tired",hands:"Wash hands",teeth:"Brush teeth",dress:"Get dressed",sleep:"Sleep"}},
-ru:{language:"Выберите язык",welcome:"Привет! Что хочешь делать?",hint:"Нажми на картинку — слово будет произнесено.",back:"Назад",sections:{communication:"Общение",games:"Обучающие игры",art:"Рисование и творчество",daily:"Повседневные навыки",feelings:"Чувства",videos:"Обучающие видео"},tap:"Нажми на картинку. Слово будет произнесено.",sentence:"Я хочу",speak:"Произнести фразу",other:"Что-то другое",items:{drink:"Пить",eat:"Есть",play:"Играть",toilet:"Туалет",mom:"Мама",dad:"Папа",help:"Помощь",other:"Что-то другое",water:"Вода",juice:"Сок",milk:"Молоко",strawberry:"Клубника",happy:"Радостный",sad:"Грустный",afraid:"Испуганный",angry:"Злой",calm:"Спокойный",tired:"Уставший",hands:"Мыть руки",teeth:"Чистить зубы",dress:"Одеваться",sleep:"Спать"}},
-hy:{language:"Ընտրեք լեզուն",welcome:"Բարև։ Ի՞նչ ես ուզում անել։",hint:"Սեղմիր նկարի վրա․ բառը կհնչի։",back:"Հետ",sections:{communication:"Հաղորդակցություն",games:"Ուսուցողական խաղեր",art:"Նկարչություն և ստեղծագործություն",daily:"Առօրյա հմտություններ",feelings:"Զգացմունքներ",videos:"Ուսուցողական տեսանյութեր"},tap:"Սեղմիր նկարի վրա։ Բառը կհնչի։",sentence:"Ես ուզում եմ",speak:"Արտասանել նախադասությունը",other:"Այլ բան",items:{drink:"Խմել",eat:"Ուտել",play:"Խաղալ",toilet:"Զուգարան",mom:"Մայրիկ",dad:"Հայրիկ",help:"Օգնություն",other:"Այլ բան",water:"Ջուր",juice:"Հյութ",milk:"Կաթ",strawberry:"Ելակ",happy:"Ուրախ",sad:"Տխուր",afraid:"Վախեցած",angry:"Բարկացած",calm:"Հանգիստ",tired:"Հոգնած",hands:"Լվանալ ձեռքերը",teeth:"Մաքրել ատամները",dress:"Հագնվել",sleep:"Քնել"}}
+const translations = {
+de:{
+language:"Wähle deine Sprache",welcome:"Hallo! Was möchtest du machen?",
+hint:"Tippe auf ein Bild – das Wort wird automatisch gesprochen.",
+communication:"Kommunikation",games:"Lernspiele",paint:"Malen & Kreativität",
+everyday:"Alltag lernen",feelings:"Gefühle",videos:"Lernen mit Videos",
+back:"← Zurück",water:"Wasser",juice:"Saft",milk:"Milch",
+drink:"Trinken",food:"Essen",play:"Spielen",toilet:"Toilette",
+mama:"Mama",papa:"Papa",help:"Hilfe",other:"Etwas anderes",
+strawberry:"Erdbeere",apple:"Apfel",banana:"Banane",
+brush:"Zähne putzen",hands:"Hände waschen",dress:"Anziehen",
+happy:"Glücklich",sad:"Traurig",angry:"Wütend",afraid:"Ängstlich",
+calm:"Ruhig",tired:"Müde",colors:"Farben",numbers:"Zahlen",
+shapes:"Formen",animals:"Tiere",coming:"Dieser Bereich wird bald erweitert."
+},
+en:{
+language:"Choose your language",welcome:"Hello! What would you like to do?",
+hint:"Tap a picture – the word will be spoken automatically.",
+communication:"Communication",games:"Learning games",paint:"Art & creativity",
+everyday:"Everyday learning",feelings:"Feelings",videos:"Learning with videos",
+back:"← Back",water:"Water",juice:"Juice",milk:"Milk",
+drink:"Drinking",food:"Food",play:"Play",toilet:"Toilet",
+mama:"Mummy",papa:"Daddy",help:"Help",other:"Something else",
+strawberry:"Strawberry",apple:"Apple",banana:"Banana",
+brush:"Brush teeth",hands:"Wash hands",dress:"Get dressed",
+happy:"Happy",sad:"Sad",angry:"Angry",afraid:"Afraid",
+calm:"Calm",tired:"Tired",colors:"Colors",numbers:"Numbers",
+shapes:"Shapes",animals:"Animals",coming:"This section will be expanded soon."
+},
+ru:{
+language:"Выберите язык",welcome:"Привет! Что ты хочешь делать?",
+hint:"Нажми на картинку – слово будет произнесено.",
+communication:"Общение",games:"Учебные игры",paint:"Рисование и творчество",
+everyday:"Повседневная жизнь",feelings:"Чувства",videos:"Обучение с видео",
+back:"← Назад",water:"Вода",juice:"Сок",milk:"Молоко",
+drink:"Пить",food:"Еда",play:"Играть",toilet:"Туалет",
+mama:"Мама",papa:"Папа",help:"Помощь",other:"Что-то другое",
+strawberry:"Клубника",apple:"Яблоко",banana:"Банан",
+brush:"Чистить зубы",hands:"Мыть руки",dress:"Одеваться",
+happy:"Радостный",sad:"Грустный",angry:"Злой",afraid:"Испуганный",
+calm:"Спокойный",tired:"Уставший",colors:"Цвета",numbers:"Числа",
+shapes:"Формы",animals:"Животные",coming:"Этот раздел скоро будет расширен."
+},
+hy:{
+language:"Ընտրիր լեզուն",welcome:"Բարև։ Ի՞նչ ես ուզում անել։",
+hint:"Սեղմիր նկարի վրա՝ բառը կհնչի։",
+communication:"Հաղորդակցություն",games:"Ուսուցողական խաղեր",
+paint:"Նկարչություն և ստեղծագործություն",everyday:"Առօրյա կյանք",
+feelings:"Զգացմունքներ",videos:"Սովորել տեսանյութերով",
+back:"← Հետ",water:"Ջուր",juice:"Հյութ",milk:"Կաթ",
+drink:"Խմել",food:"Ուտել",play:"Խաղալ",toilet:"Զուգարան",
+mama:"Մայրիկ",papa:"Հայրիկ",help:"Օգնություն",other:"Այլ բան",
+strawberry:"Ելակ",apple:"Խնձոր",banana:"Բանան",
+brush:"Ատամները մաքրել",hands:"Լվանալ ձեռքերը",dress:"Հագնվել",
+happy:"Ուրախ",sad:"Տխուր",angry:"Բարկացած",afraid:"Վախեցած",
+calm:"Հանգիստ",tired:"Հոգնած",colors:"Գույներ",numbers:"Թվեր",
+shapes:"Ձևեր",animals:"Կենդանիներ",coming:"Այս բաժինը շուտով կընդլայնվի։"
+}
 };
-const data={
-communication:[["drink","🥤"],["eat","🍽️"],["play","🧸"],["toilet","🚽"],["mom","👩‍👧"],["dad","👨‍👧"],["help","🆘"],["other","❔"]],
-drinks:[["water","💧"],["juice","🧃"],["milk","🥛"]],
-foods:[["strawberry","🍓"]],
-feelings:[["happy","😊"],["sad","😢"],["afraid","😟"],["angry","😠"],["calm","😌"],["tired","😴"]],
-daily:[["hands","🧼"],["teeth","🪥"],["dress","👕"],["sleep","🌙"]]
+
+const sections = {
+communication:{
+title:"communication",
+items:[
+["🥤","drink"],["🍽️","food"],["🧸","play"],["🚽","toilet"],
+["👩","mama"],["👨","papa"],["🆘","help"],["💗","other"]
+]},
+games:{title:"games",items:[
+["🎨","colors"],["🔢","numbers"],["🔺","shapes"],["🐾","animals"]
+]},
+paint:{title:"paint",items:[["🖍️","paint"]]},
+everyday:{title:"everyday",items:[
+["🪥","brush"],["🧼","hands"],["👕","dress"]
+]},
+feelings:{title:"feelings",items:[
+["😊","happy"],["😢","sad"],["😠","angry"],
+["😟","afraid"],["😌","calm"],["😴","tired"]
+]},
+videos:{title:"videos",items:[["🎬","coming"]]}
 };
-let currentSection="communication",chosen=[];
-const lang=document.getElementById("language");
-function tr(){return translations[lang.value]}
-function speak(text){if(!("speechSynthesis" in window)){alert("Die Sprachausgabe wird von diesem Browser leider nicht unterstützt.");return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=({de:"de-DE",en:"en-US",ru:"ru-RU",hy:"hy-AM"})[lang.value];u.rate=.88;speechSynthesis.speak(u)}
-function renderHome(){const t=tr();document.getElementById("languageLabel").textContent=t.language;document.getElementById("welcome").textContent=t.welcome;document.getElementById("homeHint").textContent=t.hint;document.getElementById("backText").textContent=t.back;document.querySelectorAll("[data-t]").forEach(e=>e.textContent=t.sections[e.dataset.t]);}
-function openSection(id){currentSection=id;chosen=[];document.getElementById("home").hidden=true;document.getElementById("detail").hidden=false;renderDetail()}
-function renderDetail(){const t=tr();const title=t.sections[currentSection];document.getElementById("detailTitle").textContent=title;document.getElementById("detailHint").textContent=t.tap;document.getElementById("backText").textContent=t.back;const cards=document.getElementById("cards");cards.innerHTML="";let list=data[currentSection]||[];if(currentSection==="communication")list=[...data.communication];if(currentSection==="daily")list=data.daily;
-list.forEach(([key,emoji])=>{const b=document.createElement("button");b.className="card";b.innerHTML=`<span class="emoji">${emoji}</span><span></span>`;b.lastChild.textContent=t.items[key]||key;b.onclick=()=>{if(currentSection==="communication"&&key==="drink"){renderSub("drinks","drink");return}if(currentSection==="communication"&&key==="eat"){renderSub("foods","eat");return}if(key==="other"){speak(t.items.other);return}chosen.push(t.items[key]||key);speak(t.items[key]||key);updateSentence()};cards.appendChild(b)});
-document.getElementById("sentence").hidden=currentSection!=="communication"&&currentSection!=="daily";document.getElementById("speakLabel").textContent=t.speak;updateSentence()}
-function renderSub(which,prefix){const t=tr(),cards=document.getElementById("cards");cards.innerHTML="";const back=document.createElement("button");back.className="back";back.textContent="← "+t.back;back.onclick=renderDetail;cards.appendChild(back);data[which].forEach(([key,emoji])=>{const b=document.createElement("button");b.className="card";b.innerHTML=`<span class="emoji">${emoji}</span><span></span>`;b.lastChild.textContent=t.items[key];b.onclick=()=>{const item=t.items[key];let phrase;if(lang.value==="de")phrase=prefix==="drink"?"Ich möchte "+item+" trinken":"Ich möchte "+item+" essen";else if(lang.value==="en")phrase=prefix==="drink"?"I want to drink "+item:"I want to eat "+item;else if(lang.value==="ru")phrase=prefix==="drink"?"Я хочу пить: "+item:"Я хочу есть: "+item;else phrase=prefix==="drink"?"Ես ուզում եմ խմել՝ "+item:"Ես ուզում եմ ուտել՝ "+item;chosen.push(phrase);speak(phrase);updateSentence()};cards.appendChild(b)})}
-function updateSentence(){const t=tr();document.getElementById("sentenceText").textContent=chosen.join(" · ");document.getElementById("sentence").hidden=chosen.length===0}
-document.querySelectorAll("[data-section]").forEach(b=>b.addEventListener("click",()=>openSection(b.dataset.section)));
-document.getElementById("back").onclick=()=>{document.getElementById("detail").hidden=true;document.getElementById("home").hidden=false;chosen=[]};
-document.getElementById("speakSentence").onclick=()=>speak(chosen.join(" "));
-lang.onchange=()=>{renderHome();if(!document.getElementById("detail").hidden)renderDetail()};
-renderHome();
-if ("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js"));
+
+let currentLanguage="de";
+let currentSection="";
+
+function t(key){
+ return translations[currentLanguage][key] || key;
+}
+
+function changeLanguage(){
+ currentLanguage=document.getElementById("language").value;
+ document.getElementById("languageLabel").textContent=t("language");
+ document.getElementById("welcome").textContent=t("welcome");
+ document.getElementById("hint").textContent=t("hint");
+ document.getElementById("backButton").textContent=t("back");
+ document.querySelectorAll("[data-key]").forEach(el=>{
+   el.textContent=t(el.dataset.key);
+ });
+ if(currentSection) renderSection();
+}
+
+function speak(key){
+ const word=t(key);
+ if(!("speechSynthesis" in window)) return;
+ window.speechSynthesis.cancel();
+ const utterance=new SpeechSynthesisUtterance(word);
+ const voices=window.speechSynthesis.getVoices();
+ const wanted={de:"de-DE",en:"en-US",ru:"ru-RU",hy:"hy-AM"}[currentLanguage];
+ utterance.lang=wanted;
+ const voice=voices.find(v=>v.lang.toLowerCase().startsWith(currentLanguage));
+ if(voice) utterance.voice=voice;
+ utterance.rate=0.85;
+ window.speechSynthesis.speak(utterance);
+}
+
+function openSection(name){
+ currentSection=name;
+ document.getElementById("home").hidden=true;
+ document.getElementById("detail").hidden=false;
+ renderSection();
+ window.scrollTo(0,0);
+}
+
+function renderSection(){
+ const section=sections[currentSection];
+ document.getElementById("sectionTitle").textContent=t(section.title);
+ document.getElementById("sectionHint").textContent=
+ currentSection==="communication" ? t("hint") : t("coming");
+ const cards=document.getElementById("cards");
+ cards.innerHTML="";
+ section.items.forEach(([emoji,key])=>{
+   const button=document.createElement("button");
+   button.className="card";
+   button.innerHTML='<span class="emoji">'+emoji+'</span>';
+   const label=document.createElement("span");
+   label.textContent=t(key);
+   button.appendChild(label);
+   button.addEventListener("click",()=>{
+     if(currentSection==="communication" && key==="drink"){
+       showChoices("drink",[
+         ["💧","water"],["🧃","juice"],["🥛","milk"]
+       ]);
+     } else if(currentSection==="communication" && key==="food"){
+       showChoices("food",[
+         ["🍓","strawberry"],["🍎","apple"],["🍌","banana"]
+       ]);
+     } else {
+       speak(key);
+     }
+   });
+   cards.appendChild(button);
+ });
+}
+
+function showChoices(type,items){
+ const cards=document.getElementById("cards");
+ document.getElementById("sectionTitle").textContent=t(type);
+ document.getElementById("sectionHint").textContent=t("hint");
+ cards.innerHTML="";
+ items.forEach(([emoji,key])=>{
+   const button=document.createElement("button");
+   button.className="card";
+   button.innerHTML='<span class="emoji">'+emoji+'</span>';
+   const label=document.createElement("span");
+   label.textContent=t(key);
+   button.appendChild(label);
+   button.addEventListener("click",()=>speak(key));
+   cards.appendChild(button);
+ });
+}
+
+function goHome(){
+ currentSection="";
+ document.getElementById("detail").hidden=true;
+ document.getElementById("home").hidden=false;
+ window.scrollTo(0,0);
+}
 </script>
-</body></html>
+</body>
+</html>
