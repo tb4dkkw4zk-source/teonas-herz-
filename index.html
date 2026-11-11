@@ -330,8 +330,14 @@ function renderSection(){
        ]);
      } else if(currentSection==="communication" && key==="food"){
        showChoices("food",[
-         ["🍓","strawberry"],["🍎","apple"],["🍌","banana"]
-       ]);
+                   ["🍓","strawberry"],["🍎","apple"],["🍌","banana"],
+          ["🍐","pear"],["🍊","orange"],["🍇","grapes"],
+          ["🍉","watermelon"],["🍑","peach"],["🍒","cherries"],
+          ["🍍","pineapple"],["🥝","kiwi"],["🥭","mango"],
+          ["🫐","blueberries"],["🍇","raspberries"],["🍋","lemon"],
+          ["🍊","mandarin"],["🟣","plum"],["🥥","coconut"],
+          ["🍈","honeydew"],["❤️","pomegranate"],["🥭","papaya"],
+          ["🍑","apricot"],["🫐","blackberries"],["🍊","grapefruit"]]);
      } else {
        speak(key);
      }
