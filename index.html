@@ -388,7 +388,7 @@ banana:"Ես ուզում եմ բանան ուտել"
     }
   };
 
-  if(type==="drink"){
+  if(type==="drink" || type==="food"){
     const text=phrases[currentLanguage][key];
     const utterance=new SpeechSynthesisUtterance(text);
     utterance.lang={
