@@ -1,9 +1,21 @@
+
 {
-  "name":"TEONAS HERZ",
-  "short_name":"TEONAS HERZ",
-  "start_url":"./",
-  "display":"standalone",
-  "background_color":"#fffaf5",
-  "theme_color":"#fff8f1",
-  "icons":[{"src":"logo.PNG","sizes":"512x512","type":"image/png"}]
+  "name": "TEONAS HERZ",
+  "short_name": "TEONAS HERZ",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fffaf5",
+  "theme_color": "#fff8f1",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
