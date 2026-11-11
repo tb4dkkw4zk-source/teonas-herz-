@@ -352,7 +352,45 @@ function showChoices(type,items){
    const label=document.createElement("span");
    label.textContent=t(key);
    button.appendChild(label);
-   button.addEventListener("click",()=>speak(key));
+button.addEventListener("click",()=>{
+  const phrases={
+    de:{
+      water:"Ich möchte Wasser trinken",
+      juice:"Ich möchte Saft trinken",
+      milk:"Ich möchte Milch trinken"
+    },
+    en:{
+      water:"I would like to drink water",
+      juice:"I would like to drink juice",
+      milk:"I would like to drink milk"
+    },
+    ru:{
+      water:"Я хочу пить воду",
+      juice:"Я хочу пить сок",
+      milk:"Я хочу пить молоко"
+    },
+    hy:{
+      water:"Ես ուզում եմ ջուր խմել",
+      juice:"Ես ուզում եմ հյութ խմել",
+      milk:"Ես ուզում եմ կաթ խմել"
+    }
+  };
+
+  if(type==="drink"){
+    const text=phrases[currentLanguage][key];
+    const utterance=new SpeechSynthesisUtterance(text);
+    utterance.lang={
+      de:"de-DE",
+      en:"en-US",
+      ru:"ru-RU",
+      hy:"hy-AM"
+    }[currentLanguage];
+    utterance.rate=0.85;
+    window.speechSynthesis.speak(utterance);
+  }else{
+    speak(key);
+  }
+});
    cards.appendChild(button);
  });
 }
